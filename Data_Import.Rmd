@@ -7,5 +7,30 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+## Import FAS csv files
+
+Import my 1st csv.
+
+```{r}
+litters_dataII = read_csv(file = "./data/FAS_litters.csv")
+```
+
+## Lecture Assessment 1 - Data Wrangling Lecture
+
+Importing data files
+
+Import pups dataset
+
+Relative and Absolute Paths
+```{r}
+pups_dataII = read_csv(file = "./data/FAS_pups.csv")
+
+pups_dataII
+
+pups_dataII = read.csv(file = "~/Desktop/DataWrangling_Me/data/FAS_pups.csv")
 ```
 
