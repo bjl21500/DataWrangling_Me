@@ -17,6 +17,9 @@ Import my 1st csv.
 
 ```{r}
 litters_dataII = read_csv(file = "./data/FAS_litters.csv")
+litters_dataII = janitor:: clean_names(litters_dataII)
+
+litters_dataII
 ```
 
 ## Lecture Assessment 1 - Data Wrangling Lecture
@@ -49,8 +52,38 @@ tail(litters_dataII)
 skimr::skim(litters_dataII)
 ```
 
-```{r}
 
+Skip some rows, omit variable names.
+
+```{r}
+ = read_csv(file = "./data/FAS_litters.csv",
+  skip = 10, col_names = FALSE)
+```
+
+Look at pups!
+
+```{r}
+pups_dataII = janitor::clean_names(pups_dataII)
+pups_dataII
+skimr::skim(pups_dataII)
 ```
 
 
+## Other formats
+
+Read in mlb data
+
+```{r}
+library(tidyverse)
+
+mlb_data = readxl::read_excel(path = "./data/mlb11.xlsx")
+
+mlb_data
+
+ = read_excel(path = "./data/mlb11.xlsx"," range = "A1:E17")
+
+mlb_subset
+```
+having a hard time doing absolute names and this subset part
+
+Read in pulse dataset
