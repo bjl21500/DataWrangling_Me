@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
-Importing in litterII and pupsII datasets
+Importing in my csv files: litterII and pupsII datasets
 
 
 ```{r}
@@ -23,4 +23,53 @@ litters_dataII = janitor::clean_names(litters_dataII)
 pups_dataII = read_csv("./data/FAS_pups.csv",
   col_types = "ciiiii")
 pups_dataII = janitor::clean_names(pups_dataII)
+```
+
+
+## Select variables in litter_dataII
+
+
+.....By listing
+
+
+
+
+```{r}
+select(litters_dataII, group, litter_number, gd0_weight)
+
+select(litters_dataII, litter_number, gd0_weight, pups_survive)
+```
+
+.... By specifying a range:
+
+```{r}
+select(litters_dataII, group, gd0_weight:pups_survive)
+```
+
+
+...by saying what I want to move
+
+```{r}
+select(litters_dataII, -litter_number)
+```
+
+
+... Renaming variables
+
+```{r}
+select(litters_dataII, group, litter_number, gestational_day_0_weight = gd0_weight)
+
+rename(litters_dataII, gestational_day_0_weight = gd0_weight)
+```
+
+...Use select_helpers:
+
+```{r}
+select(litters_dataII, starts_with("gd"))
+```
+
+## Lecture Assessment
+
+```{r}
+select(pups_dataII, litter_number, sex, pd_ears)
 ```
