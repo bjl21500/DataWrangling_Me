@@ -1,0 +1,26 @@
+---
+title: "Data_Manipulation"
+author: "Briana Lettsome"
+date: "September 27, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+Importing in litterII and pupsII datasets
+
+
+```{r}
+litters_dataII = read_csv("./data/FAS_litters.csv",
+  col_types = "ccddiiii")
+litters_dataII = janitor::clean_names(litters_dataII)
+
+
+pups_dataII = read_csv("./data/FAS_pups.csv",
+  col_types = "ciiiii")
+pups_dataII = janitor::clean_names(pups_dataII)
+```
