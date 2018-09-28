@@ -73,3 +73,17 @@ select(litters_dataII, starts_with("gd"))
 ```{r}
 select(pups_dataII, litter_number, sex, pd_ears)
 ```
+
+## Filter observations
+
+```{r}
+filter(litters_dataII, gd0_weight < 25)
+
+filter(litters_dataII, gd0_weight >= 25)
+
+filter(litters_dataII, pups_born_alive == 8)
+
+filter(litters_dataII, is.na(gd0_weight))
+```
+
+Translation: Is it true that gestational weight is missing (is.na)
