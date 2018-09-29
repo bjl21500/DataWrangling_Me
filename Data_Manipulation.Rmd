@@ -87,3 +87,11 @@ filter(litters_dataII, is.na(gd0_weight))
 ```
 
 Translation: Is it true that gestational weight is missing (is.na)
+
+```{r}
+filter(litters_dataII, group == "Low8")
+
+##Pipe function
+
+filter(litters_dataII, group %in% c("Low7", "Low8"))
+```

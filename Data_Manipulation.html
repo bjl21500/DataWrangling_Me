@@ -358,6 +358,40 @@ pups_dataII = janitor::clean_names(pups_dataII)</code></pre>
 ## 15 Mod8  #5/93/2               NA        NA            19               8
 ## # ... with 2 more variables: pups_dead_birth &lt;int&gt;, pups_survive &lt;int&gt;</code></pre>
 <p>Translation: Is it true that gestational weight is missing (is.na)</p>
+<pre class="r"><code>filter(litters_dataII, group == &quot;Low8&quot;)</code></pre>
+<pre><code>## # A tibble: 7 x 8
+##   group litter_number gd0_weight gd18_weight gd_of_birth pups_born_alive
+##   &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;       &lt;dbl&gt;       &lt;int&gt;           &lt;int&gt;
+## 1 Low8  #53                 21.8        37.2          20               8
+## 2 Low8  #79                 25.4        43.8          19               8
+## 3 Low8  #100                20          39.2          20               8
+## 4 Low8  #4/84               21.8        35.2          20               4
+## 5 Low8  #108                25.6        47.5          20               8
+## 6 Low8  #99                 23.5        39            20               6
+## 7 Low8  #110                25.5        42.7          20               7
+## # ... with 2 more variables: pups_dead_birth &lt;int&gt;, pups_survive &lt;int&gt;</code></pre>
+<pre class="r"><code>##Pipe function
+
+filter(litters_dataII, group %in% c(&quot;Low7&quot;, &quot;Low8&quot;))</code></pre>
+<pre><code>## # A tibble: 15 x 8
+##    group litter_number gd0_weight gd18_weight gd_of_birth pups_born_alive
+##    &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;       &lt;dbl&gt;       &lt;int&gt;           &lt;int&gt;
+##  1 Low7  #84/2               24.3        40.8          20               8
+##  2 Low7  #107                22.6        42.4          20               9
+##  3 Low7  #85/2               22.2        38.5          20               8
+##  4 Low7  #98                 23.8        43.8          20               9
+##  5 Low7  #102                22.6        43.3          20              11
+##  6 Low7  #101                23.8        42.7          20               9
+##  7 Low7  #111                25.5        44.6          20               3
+##  8 Low7  #112                23.9        40.5          19               6
+##  9 Low8  #53                 21.8        37.2          20               8
+## 10 Low8  #79                 25.4        43.8          19               8
+## 11 Low8  #100                20          39.2          20               8
+## 12 Low8  #4/84               21.8        35.2          20               4
+## 13 Low8  #108                25.6        47.5          20               8
+## 14 Low8  #99                 23.5        39            20               6
+## 15 Low8  #110                25.5        42.7          20               7
+## # ... with 2 more variables: pups_dead_birth &lt;int&gt;, pups_survive &lt;int&gt;</code></pre>
 </div>
 
 
